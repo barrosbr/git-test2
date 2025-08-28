@@ -11,7 +11,7 @@ function exibirTextoNaTela(tag, texto) {
 
 function exibirMensagemInicial() {
     exibirTextoNaTela('h1', 'Secrect number game. Powered by JavaScript!');
-    exibirTextoNaTela('p', 'Escolha um número entre 1 e 50');
+    exibirTextoNaTela('p', 'Choose a number between 1 and 50');
 }
 
 exibirMensagemInicial();
@@ -20,7 +20,7 @@ function verificarChute() {
     let chute = document.querySelector('input').value;
     
     if (chute == numeroSecreto) {
-        let mensagefinal = `Acertou! o numero é: ${numeroSecreto}`;
+        let mensagefinal = `You got it! The nunber is: ${numeroSecreto}`;
         exibirTextoNaTela('h1', mensagefinal);
         let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
         let mensagemTentativas = `Você descobriu o número secreto com ${tentativas} ${palavraTentativa}!`;
