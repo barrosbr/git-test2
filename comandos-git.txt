@@ -1,0 +1,140 @@
+0 - Iniciar o track do git em um diretório e todos os sub-diretorios
+	git init
+
+1 - clonar um repositorio:
+	git clone git@github.com:FilipeOliiveira/Portfolio_Next.git
+	
+	1.1 - git push origin main -> envia para o github a branch main do repositorio local origin 
+
+2 - git log -> ver os commits
+
+	2.1 Mostra detalhes dos commits
+		git log -p
+		
+	2.2 Mostra um linha para cada commit
+		git log --oneline		
+
+3 - adicionar mais de um autor a um commit
+
+	$ git commit -m "Adicionar nova funcionalidade.
+	>
+	>
+	Co-authored-by: NOME <nome@email.com>
+	Co-authored-by: OUTRO-NOME <outro@email.com>"
+
+33 - Baixar commits para o repositorio local. 
+		git pull [repositório remoto] [branch main repositório local]
+		git pull origin main
+
+4 - listar as entradas remotas 
+	git remote -v 
+
+5 - adicionar um repositorio
+	- criar uma nova pasta e excetuar:
+		git remote add gittest git@github.com:barrosbr/git-test.git
+		
+		, foi criado e linkado o repositorio local gittest com o repositorio remoto git@github.com:barrosbr/git-test.git
+	
+	5.1 - Remover um repositorio
+		git remote remove origin
+		
+	5.2 - Alterar a URL de um repositório remoto
+		git remote set-url origin https://github.com/seu-usuario/seu-repositorio
+	
+	5.3 - Alterar o apelido de um repositório remoto
+		git remote rename origin novo-origin
+
+6 - mostrar branch no prompt
+	executar 
+		.git-prompt.sh (baixar do github)
+		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\033[0;32m$(__git_ps1 " (%s)")\033[0m\$ '
+	
+	6.1 Apagar uma branch
+		git branch -d nova-funcao 
+
+7 - reverter um commit (desfazer as alteraçãoes de um commit)
+	git revert 8aacd371f0846548f17d45fa078fa37658911f96
+
+8 - Apagando um commit (escolher o id do commit anterior, será apagado os commit apos o id inserido no comando:
+	git reset --hard 7cee45367f063560d3532836094ba227e82bc936 -> vai apagar os commits posteriores ao 7cee45367f063560d3532836094ba227e82bc936
+	
+9 - Alterar mensagem do commit:
+	git commit --amend -m "Alterar texto para Guest"
+	
+10 - Incluir todos as extenções e diretorios que não precisam ser commitados para o github:
+	acessar o site gitignore.io e informar a tecnologia, será gerado um .gitignore automatico
+	
+11 - Verificar diferença entre dois commits:
+	git diff 8aacd37..251f55b
+	
+12 - when projects don't have any common ancestor
+		error: ! [rejected]        master -> master (fetch first)
+		error: ! [rejected]        master -> master (non-fast-forward)
+			git pull --allow-unrelated-histories git2 master (git pull --allow-unrelated-histories <nick name of repository> <branch name>)
+			
+13 - Salvar alterçẽos sem fazer commit (guarda uma alteração para que possa ser usada depois):
+	git stash
+	
+14 - Voltar para o ponto da alteração que não foi commitada (é uma pilha pega o stash mas recente):
+	git stash pop
+	
+15 - Listar stash
+	git stash list
+	
+16 - Apagar stash
+	git stash clear
+	
+17 - stash com nome
+	git stash push -m "Movendo chamada de funcao"
+	
+18 - seleciona o numero do stach:
+	git stash apply 1
+
+19 - Apaga o stash mais recente
+	git stash drop
+	
+20 - Faz um ctrl z nos arquivos da working tree (faz a mesma coisa: git checkout -- .):
+	git restore . (faz em todos os arquivos)
+	gti restore app.js (faz no arquivo especifico)
+	
+21 - Retirar um arquivo (app.js) da staging area
+	git restore --staged app.js
+	
+22 - Restaurando um arquivo de um determinado commit
+	git restore --source=9e938b8f7747cfa4c500adbd06009c2435714eb2 index.html
+	
+23 - Para definir um checkpoint ou versão:
+	git tag v1.0
+	
+24 - Especificando um determinado commit:
+	git tag v1.1 deb64b6
+	
+25 - Mostrar tags
+	git tag
+	
+26 - Fazer push de uma tag
+	 git push git2 master v1.0
+	 
+27 - Apagar uma tag
+	git tag -d v1.0
+	
+28 - Criar uma tag anoteded
+	git tag -a -m "Release version 1.0" v1.0 e043ccb
+	
+29 - Ver detalhes de uma  ag anoteded
+	git tag -v v1.0
+	
+30 - Aplicar um commit de uma branch em outra branch
+	git cherry-pick 698db2cb46b79c4983c8a3dcc77025437dc9a7dc (esse commit 698db2cb é de outra branch)
+	
+31 - Mostrar quem fez as alterações
+	git blame app.js
+	
+32 - Mostra um commit
+	git show 1d54e37
+
+33 - 
+	
+
+
+
