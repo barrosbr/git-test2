@@ -136,6 +136,7 @@
 33 - GitHub Gist para publicar trechos de codigo no gitHub (faz no proprio github)
 
 34 - 
+
 	
 
 
